@@ -1,0 +1,497 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">]>
+
+<rdf:RDF
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:biblioteca="http://www.proyecto.com/biblioteca#"
+     xml:base="http://www.proyecto.com/biblioteca#"
+>
+
+<rdfs:Class rdf:about="http://www.proyecto.com/biblioteca#Control"/>
+
+
+<!-- Clase: Libro -->
+<rdfs:Class rdf:about="http://www.proyecto.com/biblioteca#Libro">
+    <rdfs:subClassOf rdf:resource="http://www.proyecto.com/biblioteca#Control"/>
+</rdfs:Class>
+
+<!-- Propiedad: codigoLibro -->
+<rdf:Property rdf:about="#codigoLibro">
+    <rdfs:domain rdf:resource="#Libro"/>
+    <rdfs:range rdf:resource="&xsd;integer"/>
+</rdf:Property>
+<!-- Propiedad: nombreLibro -->
+<rdf:Property rdf:about="#nombreLibro">
+    <rdfs:domain rdf:resource="#Libro"/>
+    <rdfs:range rdf:resource="&xsd;string"/>
+</rdf:Property>
+<!-- Propiedad: editorial -->
+<rdf:Property rdf:about="#editorial">
+    <rdfs:domain rdf:resource="#Libro"/>
+    <rdfs:range rdf:resource="&xsd;string"/>
+</rdf:Property>
+<!-- Propiedad: autor -->
+<rdf:Property rdf:about="#autor">
+    <rdfs:domain rdf:resource="#Libro"/>
+    <rdfs:range rdf:resource="&xsd;string"/>
+</rdf:Property>
+<!-- Propiedad: genero -->
+<rdf:Property rdf:about="#genero">
+    <rdfs:domain rdf:resource="#Libro"/>
+    <rdfs:range rdf:resource="&xsd;string"/>
+</rdf:Property>
+<!-- Propiedad: paisAutor -->
+<rdf:Property rdf:about="#paisAutor">
+    <rdfs:domain rdf:resource="#Libro"/>
+    <rdfs:range rdf:resource="&xsd;string"/>
+</rdf:Property>
+<!-- Propiedad: numeroPaginas -->
+<rdf:Property rdf:about="#numeroPaginas">
+    <rdfs:domain rdf:resource="#Libro"/>
+    <rdfs:range rdf:resource="&xsd;integer"/>
+</rdf:Property>
+<!-- Propiedad: anioEdicion -->
+<rdf:Property rdf:about="#anioEdicion">
+    <rdfs:domain rdf:resource="#Libro"/>
+    <rdfs:range rdf:resource="&xsd;date"/>
+</rdf:Property>
+<!-- Propiedad: precio -->
+<rdf:Property rdf:about="#precio">
+    <rdfs:domain rdf:resource="#Libro"/>
+    <rdfs:range rdf:resource="&xsd;integer"/>
+</rdf:Property>
+
+<!-- Clase: Usuario -->
+<rdfs:Class rdf:about="http://www.proyecto.com/biblioteca#Usuario">
+    <rdfs:subClassOf rdf:resource="http://www.proyecto.com/biblioteca#Control"/>
+</rdfs:Class>
+
+<!-- Propiedad: codigoUsuario -->
+<rdf:Property rdf:about="#codigoUsuario">
+    <rdfs:domain rdf:resource="#Usuario"/>
+    <rdfs:range rdf:resource="&xsd;integer"/>
+</rdf:Property>
+<!-- Propiedad: nombre -->
+<rdf:Property rdf:about="#nombre">
+    <rdfs:domain rdf:resource="#Usuario"/>
+    <rdfs:range rdf:resource="&xsd;string"/>
+</rdf:Property>
+<!-- Propiedad: apellidos -->
+<rdf:Property rdf:about="#apellidos">
+    <rdfs:domain rdf:resource="#Usuario"/>
+    <rdfs:range rdf:resource="&xsd;string"/>
+</rdf:Property>
+<!-- Propiedad: noIdentificacion -->
+<rdf:Property rdf:about="#noIdentificacion">
+    <rdfs:domain rdf:resource="#Usuario"/>
+    <rdfs:range rdf:resource="&xsd;string"/>
+</rdf:Property>
+<!-- Propiedad: domicilio -->
+<rdf:Property rdf:about="#domicilio">
+    <rdfs:domain rdf:resource="#Usuario"/>
+    <rdfs:range rdf:resource="&xsd;string"/>
+</rdf:Property>
+<!-- Propiedad: estado -->
+<rdf:Property rdf:about="#estado">
+    <rdfs:domain rdf:resource="#Usuario"/>
+    <rdfs:range rdf:resource="&xsd;string"/>
+</rdf:Property>
+<!-- Propiedad: municipio -->
+<rdf:Property rdf:about="#municipio">
+    <rdfs:domain rdf:resource="#Usuario"/>
+    <rdfs:range rdf:resource="&xsd;string"/>
+</rdf:Property>
+<!-- Propiedad: fechaNacimiento -->
+<rdf:Property rdf:about="#fechaNacimiento">
+    <rdfs:domain rdf:resource="#Usuario"/>
+    <rdfs:range rdf:resource="&xsd;date"/>
+</rdf:Property>
+
+<!-- Clase: Prestamo -->
+<rdfs:Class rdf:about="http://www.proyecto.com/biblioteca#Prestamo">
+    <rdfs:subClassOf rdf:resource="http://www.proyecto.com/biblioteca#Control"/>
+</rdfs:Class>
+
+<!-- Propiedad: numeroPedido -->
+<rdf:Property rdf:about="#numeroPedido">
+    <rdfs:domain rdf:resource="#Prestamo"/>
+    <rdfs:range rdf:resource="&xsd;integer"/>
+</rdf:Property>
+<!-- Propiedad: fechaSalida -->
+<rdf:Property rdf:about="#fechaSalida">
+    <rdfs:domain rdf:resource="#Prestamo"/>
+    <rdfs:range rdf:resource="&xsd;date"/>
+</rdf:Property>
+<!-- Propiedad: codigoLibro -->
+<rdf:Property rdf:about="#codigoLibro">
+    <rdfs:domain rdf:resource="#Prestamo"/>
+    <rdfs:range rdf:resource="&xsd;integer"/>
+</rdf:Property>
+<!-- Propiedad: fechaMaxima -->
+<rdf:Property rdf:about="#fechaMaxima">
+    <rdfs:domain rdf:resource="#Prestamo"/>
+    <rdfs:range rdf:resource="&xsd;date"/>
+</rdf:Property>
+<!-- Propiedad: codigoUsuario -->
+<rdf:Property rdf:about="#codigoUsuario">
+    <rdfs:domain rdf:resource="#Prestamo"/>
+    <rdfs:range rdf:resource="&xsd;integer"/>
+</rdf:Property>
+<!-- Propiedad: fechaDevolucion -->
+<rdf:Property rdf:about="#fechaDevolucion">
+    <rdfs:domain rdf:resource="#Prestamo"/>
+    <rdfs:range rdf:resource="&xsd;date"/>
+</rdf:Property>
+
+<!-- Instancia libro -->
+<rdf:Description rdf:about="#codigoLibro 1">
+  <rdf:type rdf:resource="#Libro" />
+  <biblioteca:nombreLibro>La Chica del Tren</biblioteca:nombreLibro>
+  <biblioteca:editorial>Editorial Planeta</biblioteca:editorial>
+  <biblioteca:autor>Paula Hawkins</biblioteca:autor>
+  <biblioteca:genero>Suspenso</biblioteca:genero>
+  <biblioteca:paisAutor>Reino Unido</biblioteca:paisAutor>
+  <biblioteca:numeroPaginas>395</biblioteca:numeroPaginas>
+  <biblioteca:anioEdicion>13/01/2015</biblioteca:anioEdicion>
+  <biblioteca:precioLibro>22.99</biblioteca:precioLibro>
+</rdf:Description>
+
+<!-- Instancia libro -->
+<rdf:Description rdf:about="#codigoLibro 2">
+  <rdf:type rdf:resource="#Libro" />
+  <biblioteca:nombreLibro>El Codigo Da Vinci</biblioteca:nombreLibro>
+  <biblioteca:editorial>Editorial Random House</biblioteca:editorial>
+  <biblioteca:autor>Dan Brown</biblioteca:autor>
+  <biblioteca:genero>Suspenso</biblioteca:genero>
+  <biblioteca:paisAutor>Estados Unidos</biblioteca:paisAutor>
+  <biblioteca:numeroPaginas>489</biblioteca:numeroPaginas>
+  <biblioteca:anioEdicion>18/03/2003</biblioteca:anioEdicion>
+  <biblioteca:precioLibro>20.5</biblioteca:precioLibro>
+</rdf:Description>
+
+<!-- Instancia libro -->
+<rdf:Description rdf:about="#codigoLibro 3">
+  <rdf:type rdf:resource="#Libro" />
+  <biblioteca:nombreLibro>Los Juegos del Hambre</biblioteca:nombreLibro>
+  <biblioteca:editorial>Editorial Scholastic</biblioteca:editorial>
+  <biblioteca:autor>Suzanne Collins</biblioteca:autor>
+  <biblioteca:genero>Ciencia Ficcion</biblioteca:genero>
+  <biblioteca:paisAutor>Estados Unidos</biblioteca:paisAutor>
+  <biblioteca:numeroPaginas>374</biblioteca:numeroPaginas>
+  <biblioteca:anioEdicion>14/09/2008</biblioteca:anioEdicion>
+  <biblioteca:precioLibro>17.99</biblioteca:precioLibro>
+</rdf:Description>
+
+<!-- Instancia libro -->
+<rdf:Description rdf:about="#codigoLibro 4">
+  <rdf:type rdf:resource="#Libro" />
+  <biblioteca:nombreLibro>Sapiens De Animales a Dioses</biblioteca:nombreLibro>
+  <biblioteca:editorial>Editorial Debate</biblioteca:editorial>
+  <biblioteca:autor>Yuval Noah Harari</biblioteca:autor>
+  <biblioteca:genero>Historia</biblioteca:genero>
+  <biblioteca:paisAutor>Israel</biblioteca:paisAutor>
+  <biblioteca:numeroPaginas>498</biblioteca:numeroPaginas>
+  <biblioteca:anioEdicion>04/09/2011</biblioteca:anioEdicion>
+  <biblioteca:precioLibro>24.99</biblioteca:precioLibro>
+</rdf:Description>
+
+<!-- Instancia libro -->
+<rdf:Description rdf:about="#codigoLibro 5">
+  <rdf:type rdf:resource="#Libro" />
+  <biblioteca:nombreLibro>La Sombra del Viento</biblioteca:nombreLibro>
+  <biblioteca:editorial>Editorial Planeta</biblioteca:editorial>
+  <biblioteca:autor>Carlos Ruiz Zafon</biblioteca:autor>
+  <biblioteca:genero>Ficcion</biblioteca:genero>
+  <biblioteca:paisAutor>Espana</biblioteca:paisAutor>
+  <biblioteca:numeroPaginas>567</biblioteca:numeroPaginas>
+  <biblioteca:anioEdicion>06/04/2001</biblioteca:anioEdicion>
+  <biblioteca:precioLibro>19.75</biblioteca:precioLibro>
+</rdf:Description>
+
+<!-- Instancia libro -->
+<rdf:Description rdf:about="#codigoLibro 6">
+  <rdf:type rdf:resource="#Libro" />
+  <biblioteca:nombreLibro>Ciudades de Papel</biblioteca:nombreLibro>
+  <biblioteca:editorial>Editorial Nube de Tinta</biblioteca:editorial>
+  <biblioteca:autor>John Green</biblioteca:autor>
+  <biblioteca:genero>Juvenil</biblioteca:genero>
+  <biblioteca:paisAutor>Estados Unidos</biblioteca:paisAutor>
+  <biblioteca:numeroPaginas>368</biblioteca:numeroPaginas>
+  <biblioteca:anioEdicion>16/10/2008</biblioteca:anioEdicion>
+  <biblioteca:precioLibro>15.99</biblioteca:precioLibro>
+</rdf:Description>
+
+<!-- Instancia libro -->
+<rdf:Description rdf:about="#codigoLibro 7">
+  <rdf:type rdf:resource="#Libro" />
+  <biblioteca:nombreLibro>La Casa de los Espiritus</biblioteca:nombreLibro>
+  <biblioteca:editorial>Editorial Plaza Y Janes</biblioteca:editorial>
+  <biblioteca:autor>Isabel Allende</biblioteca:autor>
+  <biblioteca:genero>Ficcion</biblioteca:genero>
+  <biblioteca:paisAutor>Chile</biblioteca:paisAutor>
+  <biblioteca:numeroPaginas>490</biblioteca:numeroPaginas>
+  <biblioteca:anioEdicion>26/09/1982</biblioteca:anioEdicion>
+  <biblioteca:precioLibro>21.5</biblioteca:precioLibro>
+</rdf:Description>
+
+<!-- Instancia libro -->
+<rdf:Description rdf:about="#codigoLibro 8">
+  <rdf:type rdf:resource="#Libro" />
+  <biblioteca:nombreLibro>Cometas en el Cielo</biblioteca:nombreLibro>
+  <biblioteca:editorial>Editorial Salamandra</biblioteca:editorial>
+  <biblioteca:autor>Khaled Hosseini</biblioteca:autor>
+  <biblioteca:genero>Drama</biblioteca:genero>
+  <biblioteca:paisAutor>Afganistan</biblioteca:paisAutor>
+  <biblioteca:numeroPaginas>371</biblioteca:numeroPaginas>
+  <biblioteca:anioEdicion>29/05/2003</biblioteca:anioEdicion>
+  <biblioteca:precioLibro>18.95</biblioteca:precioLibro>
+</rdf:Description>
+
+<!-- Instancia libro -->
+<rdf:Description rdf:about="#codigoLibro 9">
+  <rdf:type rdf:resource="#Libro" />
+  <biblioteca:nombreLibro>La Ladrona de Libros</biblioteca:nombreLibro>
+  <biblioteca:editorial>Editorial Lumen</biblioteca:editorial>
+  <biblioteca:autor>Markus Zusak</biblioteca:autor>
+  <biblioteca:genero>Historica</biblioteca:genero>
+  <biblioteca:paisAutor>Australia</biblioteca:paisAutor>
+  <biblioteca:numeroPaginas>584</biblioteca:numeroPaginas>
+  <biblioteca:anioEdicion>14/03/2005</biblioteca:anioEdicion>
+  <biblioteca:precioLibro>17.5</biblioteca:precioLibro>
+</rdf:Description>
+
+<!-- Instancia libro -->
+<rdf:Description rdf:about="#codigoLibro 10">
+  <rdf:type rdf:resource="#Libro" />
+  <biblioteca:nombreLibro>Ready Player One</biblioteca:nombreLibro>
+  <biblioteca:editorial>Editorial Crown</biblioteca:editorial>
+  <biblioteca:autor>Ernest Cline</biblioteca:autor>
+  <biblioteca:genero>Ciencia Ficcion</biblioteca:genero>
+  <biblioteca:paisAutor>Estados Unidos</biblioteca:paisAutor>
+  <biblioteca:numeroPaginas>374</biblioteca:numeroPaginas>
+  <biblioteca:anioEdicion>16/08/2011</biblioteca:anioEdicion>
+  <biblioteca:precioLibro>19.99</biblioteca:precioLibro>
+</rdf:Description>
+
+<!-- Instancia usuario -->
+<rdf:Description rdf:about="#101">
+  <rdf:type rdf:resource="#Usuario" />
+  <biblioteca:nombre>Juan</biblioteca:nombre>
+  <biblioteca:apellidos>Perez</biblioteca:apellidos>
+  <biblioteca:noIdentificacion>8765432101234</biblioteca:noIdentificacion>
+  <biblioteca:domicilio>Calle Falsa 123</biblioteca:domicilio>
+  <biblioteca:estado>CDMX</biblioteca:estado>
+  <biblioteca:municipio>Ciudad de Mexico</biblioteca:municipio>
+  <biblioteca:nacimiento>15/02/1990</biblioteca:nacimiento>
+</rdf:Description>
+
+<!-- Instancia usuario -->
+<rdf:Description rdf:about="#102">
+  <rdf:type rdf:resource="#Usuario" />
+  <biblioteca:nombre>Ana</biblioteca:nombre>
+  <biblioteca:apellidos>Gomez</biblioteca:apellidos>
+  <biblioteca:noIdentificacion>2345678901234</biblioteca:noIdentificacion>
+  <biblioteca:domicilio>Avenida Siempre Viva 742</biblioteca:domicilio>
+  <biblioteca:estado>CDMX</biblioteca:estado>
+  <biblioteca:municipio>Ciudad de Mexico</biblioteca:municipio>
+  <biblioteca:nacimiento>25/06/1985</biblioteca:nacimiento>
+</rdf:Description>
+
+<!-- Instancia usuario -->
+<rdf:Description rdf:about="#103">
+  <rdf:type rdf:resource="#Usuario" />
+  <biblioteca:nombre>Luis</biblioteca:nombre>
+  <biblioteca:apellidos>Martinez</biblioteca:apellidos>
+  <biblioteca:noIdentificacion>1234567890123</biblioteca:noIdentificacion>
+  <biblioteca:domicilio>Calle Principal 456</biblioteca:domicilio>
+  <biblioteca:estado>Queretaro</biblioteca:estado>
+  <biblioteca:municipio>Queretaro</biblioteca:municipio>
+  <biblioteca:nacimiento>30/11/1992</biblioteca:nacimiento>
+</rdf:Description>
+
+<!-- Instancia usuario -->
+<rdf:Description rdf:about="#104">
+  <rdf:type rdf:resource="#Usuario" />
+  <biblioteca:nombre>Maria</biblioteca:nombre>
+  <biblioteca:apellidos>Fernandez</biblioteca:apellidos>
+  <biblioteca:noIdentificacion>3456789012345</biblioteca:noIdentificacion>
+  <biblioteca:domicilio>Calle Secundaria 789</biblioteca:domicilio>
+  <biblioteca:estado>Jalisco</biblioteca:estado>
+  <biblioteca:municipio>Guadalajara</biblioteca:municipio>
+  <biblioteca:nacimiento>10/09/1988</biblioteca:nacimiento>
+</rdf:Description>
+
+<!-- Instancia usuario -->
+<rdf:Description rdf:about="#105">
+  <rdf:type rdf:resource="#Usuario" />
+  <biblioteca:nombre>Carlos</biblioteca:nombre>
+  <biblioteca:apellidos>Ramirez</biblioteca:apellidos>
+  <biblioteca:noIdentificacion>9012345678901</biblioteca:noIdentificacion>
+  <biblioteca:domicilio>Boulevard del Sol 321</biblioteca:domicilio>
+  <biblioteca:estado>CDMX</biblioteca:estado>
+  <biblioteca:municipio>Ciudad de Mexico</biblioteca:municipio>
+  <biblioteca:nacimiento>20/08/1995</biblioteca:nacimiento>
+</rdf:Description>
+
+<!-- Instancia usuario -->
+<rdf:Description rdf:about="#106">
+  <rdf:type rdf:resource="#Usuario" />
+  <biblioteca:nombre>Laura</biblioteca:nombre>
+  <biblioteca:apellidos>Jimenez</biblioteca:apellidos>
+  <biblioteca:noIdentificacion>5678901234567</biblioteca:noIdentificacion>
+  <biblioteca:domicilio>Callejon del Beso 234</biblioteca:domicilio>
+  <biblioteca:estado>Queretaro</biblioteca:estado>
+  <biblioteca:municipio>Queretaro</biblioteca:municipio>
+  <biblioteca:nacimiento>12/03/1990</biblioteca:nacimiento>
+</rdf:Description>
+
+<!-- Instancia usuario -->
+<rdf:Description rdf:about="#107">
+  <rdf:type rdf:resource="#Usuario" />
+  <biblioteca:nombre>Pablo</biblioteca:nombre>
+  <biblioteca:apellidos>Nunez</biblioteca:apellidos>
+  <biblioteca:noIdentificacion>6789012345678</biblioteca:noIdentificacion>
+  <biblioteca:domicilio>Calle de la Paz 145</biblioteca:domicilio>
+  <biblioteca:estado>Estado de Mexico</biblioteca:estado>
+  <biblioteca:municipio>Toluca</biblioteca:municipio>
+  <biblioteca:nacimiento>19/07/1993</biblioteca:nacimiento>
+</rdf:Description>
+
+<!-- Instancia usuario -->
+<rdf:Description rdf:about="#108">
+  <rdf:type rdf:resource="#Usuario" />
+  <biblioteca:nombre>Sofia</biblioteca:nombre>
+  <biblioteca:apellidos>Rojas</biblioteca:apellidos>
+  <biblioteca:noIdentificacion>7890123456789</biblioteca:noIdentificacion>
+  <biblioteca:domicilio>Residencial Sol 456</biblioteca:domicilio>
+  <biblioteca:estado>CDMX</biblioteca:estado>
+  <biblioteca:municipio>Ciudad de Mexico</biblioteca:municipio>
+  <biblioteca:nacimiento>25/01/1986</biblioteca:nacimiento>
+</rdf:Description>
+
+<!-- Instancia usuario -->
+<rdf:Description rdf:about="#109">
+  <rdf:type rdf:resource="#Usuario" />
+  <biblioteca:nombre>Andres</biblioteca:nombre>
+  <biblioteca:apellidos>Mendoza</biblioteca:apellidos>
+  <biblioteca:noIdentificacion>8901234567890</biblioteca:noIdentificacion>
+  <biblioteca:domicilio>Calle Jardin 567</biblioteca:domicilio>
+  <biblioteca:estado>Jalisco</biblioteca:estado>
+  <biblioteca:municipio>Guadalajara</biblioteca:municipio>
+  <biblioteca:nacimiento>15/11/1984</biblioteca:nacimiento>
+</rdf:Description>
+
+<!-- Instancia usuario -->
+<rdf:Description rdf:about="#110">
+  <rdf:type rdf:resource="#Usuario" />
+  <biblioteca:nombre>Lucia</biblioteca:nombre>
+  <biblioteca:apellidos>Sanchez</biblioteca:apellidos>
+  <biblioteca:noIdentificacion>0123456789012</biblioteca:noIdentificacion>
+  <biblioteca:domicilio>Avenida Primavera 789</biblioteca:domicilio>
+  <biblioteca:estado>CDMX</biblioteca:estado>
+  <biblioteca:municipio>Ciudad de Mexico</biblioteca:municipio>
+  <biblioteca:nacimiento>05/05/1991</biblioteca:nacimiento>
+</rdf:Description>
+
+<!-- Instancia prestamo -->
+<rdf:Description rdf:about="#numeroPedido 1">
+  <rdf:type rdf:resource="#Prestamo" />
+  <biblioteca:codigoLibro>1</biblioteca:codigoLibro>
+  <biblioteca:codigoUsuario>101</biblioteca:codigoUsuario>
+  <biblioteca:fechaSalida>01/10/2024</biblioteca:fechaSalida>
+  <biblioteca:fechaMaxima>15/10/2024</biblioteca:fechaMaxima>
+  <biblioteca:fechaDevolucion>14/10/2024</biblioteca:fechaDevolucion>
+</rdf:Description>
+
+<!-- Instancia prestamo -->
+<rdf:Description rdf:about="#numeroPedido 2">
+  <rdf:type rdf:resource="#Prestamo" />
+  <biblioteca:codigoLibro>2</biblioteca:codigoLibro>
+  <biblioteca:codigoUsuario>102</biblioteca:codigoUsuario>
+  <biblioteca:fechaSalida>05/10/2024</biblioteca:fechaSalida>
+  <biblioteca:fechaMaxima>20/10/2024</biblioteca:fechaMaxima>
+  <biblioteca:fechaDevolucion>18/10/2024</biblioteca:fechaDevolucion>
+</rdf:Description>
+
+<!-- Instancia prestamo -->
+<rdf:Description rdf:about="#numeroPedido 3">
+  <rdf:type rdf:resource="#Prestamo" />
+  <biblioteca:codigoLibro>3</biblioteca:codigoLibro>
+  <biblioteca:codigoUsuario>103</biblioteca:codigoUsuario>
+  <biblioteca:fechaSalida>10/10/2024</biblioteca:fechaSalida>
+  <biblioteca:fechaMaxima>24/10/2024</biblioteca:fechaMaxima>
+  <biblioteca:fechaDevolucion>23/10/2024</biblioteca:fechaDevolucion>
+</rdf:Description>
+
+<!-- Instancia prestamo -->
+<rdf:Description rdf:about="#numeroPedido 4">
+  <rdf:type rdf:resource="#Prestamo" />
+  <biblioteca:codigoLibro>4</biblioteca:codigoLibro>
+  <biblioteca:codigoUsuario>104</biblioteca:codigoUsuario>
+  <biblioteca:fechaSalida>12/10/2024</biblioteca:fechaSalida>
+  <biblioteca:fechaMaxima>26/10/2024</biblioteca:fechaMaxima>
+  <biblioteca:fechaDevolucion>25/10/2024</biblioteca:fechaDevolucion>
+</rdf:Description>
+
+<!-- Instancia prestamo -->
+<rdf:Description rdf:about="#numeroPedido 5">
+  <rdf:type rdf:resource="#Prestamo" />
+  <biblioteca:codigoLibro>5</biblioteca:codigoLibro>
+  <biblioteca:codigoUsuario>105</biblioteca:codigoUsuario>
+  <biblioteca:fechaSalida>15/10/2024</biblioteca:fechaSalida>
+  <biblioteca:fechaMaxima>30/10/2024</biblioteca:fechaMaxima>
+  <biblioteca:fechaDevolucion>04/11/2024</biblioteca:fechaDevolucion>
+</rdf:Description>
+
+<!-- Instancia prestamo -->
+<rdf:Description rdf:about="#numeroPedido 6">
+  <rdf:type rdf:resource="#Prestamo" />
+  <biblioteca:codigoLibro>6</biblioteca:codigoLibro>
+  <biblioteca:codigoUsuario>106</biblioteca:codigoUsuario>
+  <biblioteca:fechaSalida>20/10/2024</biblioteca:fechaSalida>
+  <biblioteca:fechaMaxima>03/11/2024</biblioteca:fechaMaxima>
+  <biblioteca:fechaDevolucion>01/11/2024</biblioteca:fechaDevolucion>
+</rdf:Description>
+
+<!-- Instancia prestamo -->
+<rdf:Description rdf:about="#numeroPedido 7">
+  <rdf:type rdf:resource="#Prestamo" />
+  <biblioteca:codigoLibro>7</biblioteca:codigoLibro>
+  <biblioteca:codigoUsuario>107</biblioteca:codigoUsuario>
+  <biblioteca:fechaSalida>21/10/2024</biblioteca:fechaSalida>
+  <biblioteca:fechaMaxima>05/11/2024</biblioteca:fechaMaxima>
+  <biblioteca:fechaDevolucion>04/11/2024</biblioteca:fechaDevolucion>
+</rdf:Description>
+
+<!-- Instancia prestamo -->
+<rdf:Description rdf:about="#numeroPedido 8">
+  <rdf:type rdf:resource="#Prestamo" />
+  <biblioteca:codigoLibro>8</biblioteca:codigoLibro>
+  <biblioteca:codigoUsuario>108</biblioteca:codigoUsuario>
+  <biblioteca:fechaSalida>25/10/2024</biblioteca:fechaSalida>
+  <biblioteca:fechaMaxima>09/11/2024</biblioteca:fechaMaxima>
+  <biblioteca:fechaDevolucion>07/11/2024</biblioteca:fechaDevolucion>
+</rdf:Description>
+
+<!-- Instancia prestamo -->
+<rdf:Description rdf:about="#numeroPedido 9">
+  <rdf:type rdf:resource="#Prestamo" />
+  <biblioteca:codigoLibro>9</biblioteca:codigoLibro>
+  <biblioteca:codigoUsuario>109</biblioteca:codigoUsuario>
+  <biblioteca:fechaSalida>27/10/2024</biblioteca:fechaSalida>
+  <biblioteca:fechaMaxima>11/11/2024</biblioteca:fechaMaxima>
+  <biblioteca:fechaDevolucion>04/11/2024</biblioteca:fechaDevolucion>
+</rdf:Description>
+
+<!-- Instancia prestamo -->
+<rdf:Description rdf:about="#numeroPedido 10">
+  <rdf:type rdf:resource="#Prestamo" />
+  <biblioteca:codigoLibro>10</biblioteca:codigoLibro>
+  <biblioteca:codigoUsuario>110</biblioteca:codigoUsuario>
+  <biblioteca:fechaSalida>30/10/2024</biblioteca:fechaSalida>
+  <biblioteca:fechaMaxima>13/11/2024</biblioteca:fechaMaxima>
+  <biblioteca:fechaDevolucion>04/11/2024</biblioteca:fechaDevolucion>
+</rdf:Description>
+
+</rdf:RDF>
