@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 .\\gramConsulta.g 2024-12-04 10:59:14
+// $ANTLR 3.5.2 gramConsulta.g 2024-12-04 18:12:26
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -46,15 +46,15 @@ public class gramConsultaLexer extends Lexer {
 	public gramConsultaLexer(CharStream input, RecognizerSharedState state) {
 		super(input,state);
 	}
-	@Override public String getGrammarFileName() { return ".\\gramConsulta.g"; }
+	@Override public String getGrammarFileName() { return "gramConsulta.g"; }
 
 	// $ANTLR start "T__7"
 	public final void mT__7() throws RecognitionException {
 		try {
 			int _type = T__7;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:7:6: ( 'anioEdicion' )
-			// .\\gramConsulta.g:7:8: 'anioEdicion'
+			// gramConsulta.g:7:6: ( 'anioEdicion' )
+			// gramConsulta.g:7:8: 'anioEdicion'
 			{
 			match("anioEdicion"); 
 
@@ -74,8 +74,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__8;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:8:6: ( 'apellidos' )
-			// .\\gramConsulta.g:8:8: 'apellidos'
+			// gramConsulta.g:8:6: ( 'apellidos' )
+			// gramConsulta.g:8:8: 'apellidos'
 			{
 			match("apellidos"); 
 
@@ -95,8 +95,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__9;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:9:6: ( 'autor' )
-			// .\\gramConsulta.g:9:8: 'autor'
+			// gramConsulta.g:9:6: ( 'autor' )
+			// gramConsulta.g:9:8: 'autor'
 			{
 			match("autor"); 
 
@@ -116,8 +116,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__10;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:10:7: ( 'codigoLibro' )
-			// .\\gramConsulta.g:10:9: 'codigoLibro'
+			// gramConsulta.g:10:7: ( 'codigoLibro' )
+			// gramConsulta.g:10:9: 'codigoLibro'
 			{
 			match("codigoLibro"); 
 
@@ -137,8 +137,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__11;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:11:7: ( 'codigoUsuario' )
-			// .\\gramConsulta.g:11:9: 'codigoUsuario'
+			// gramConsulta.g:11:7: ( 'codigoUsuario' )
+			// gramConsulta.g:11:9: 'codigoUsuario'
 			{
 			match("codigoUsuario"); 
 
@@ -158,8 +158,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__12;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:12:7: ( 'domicilio' )
-			// .\\gramConsulta.g:12:9: 'domicilio'
+			// gramConsulta.g:12:7: ( 'domicilio' )
+			// gramConsulta.g:12:9: 'domicilio'
 			{
 			match("domicilio"); 
 
@@ -179,8 +179,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__13;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:13:7: ( 'editorial' )
-			// .\\gramConsulta.g:13:9: 'editorial'
+			// gramConsulta.g:13:7: ( 'editorial' )
+			// gramConsulta.g:13:9: 'editorial'
 			{
 			match("editorial"); 
 
@@ -200,8 +200,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__14;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:14:7: ( 'estado' )
-			// .\\gramConsulta.g:14:9: 'estado'
+			// gramConsulta.g:14:7: ( 'estado' )
+			// gramConsulta.g:14:9: 'estado'
 			{
 			match("estado"); 
 
@@ -221,8 +221,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__15;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:15:7: ( 'fechaDevolucion' )
-			// .\\gramConsulta.g:15:9: 'fechaDevolucion'
+			// gramConsulta.g:15:7: ( 'fechaDevolucion' )
+			// gramConsulta.g:15:9: 'fechaDevolucion'
 			{
 			match("fechaDevolucion"); 
 
@@ -242,8 +242,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__16;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:16:7: ( 'fechaMaxima' )
-			// .\\gramConsulta.g:16:9: 'fechaMaxima'
+			// gramConsulta.g:16:7: ( 'fechaMaxima' )
+			// gramConsulta.g:16:9: 'fechaMaxima'
 			{
 			match("fechaMaxima"); 
 
@@ -263,8 +263,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__17;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:17:7: ( 'fechaNacimiento' )
-			// .\\gramConsulta.g:17:9: 'fechaNacimiento'
+			// gramConsulta.g:17:7: ( 'fechaNacimiento' )
+			// gramConsulta.g:17:9: 'fechaNacimiento'
 			{
 			match("fechaNacimiento"); 
 
@@ -284,8 +284,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__18;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:18:7: ( 'fechaSalida' )
-			// .\\gramConsulta.g:18:9: 'fechaSalida'
+			// gramConsulta.g:18:7: ( 'fechaSalida' )
+			// gramConsulta.g:18:9: 'fechaSalida'
 			{
 			match("fechaSalida"); 
 
@@ -305,8 +305,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__19;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:19:7: ( 'genero' )
-			// .\\gramConsulta.g:19:9: 'genero'
+			// gramConsulta.g:19:7: ( 'genero' )
+			// gramConsulta.g:19:9: 'genero'
 			{
 			match("genero"); 
 
@@ -326,8 +326,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__20;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:20:7: ( 'municipio' )
-			// .\\gramConsulta.g:20:9: 'municipio'
+			// gramConsulta.g:20:7: ( 'municipio' )
+			// gramConsulta.g:20:9: 'municipio'
 			{
 			match("municipio"); 
 
@@ -347,8 +347,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__21;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:21:7: ( 'noIdentificacion' )
-			// .\\gramConsulta.g:21:9: 'noIdentificacion'
+			// gramConsulta.g:21:7: ( 'noIdentificacion' )
+			// gramConsulta.g:21:9: 'noIdentificacion'
 			{
 			match("noIdentificacion"); 
 
@@ -368,8 +368,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__22;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:22:7: ( 'nombre' )
-			// .\\gramConsulta.g:22:9: 'nombre'
+			// gramConsulta.g:22:7: ( 'nombre' )
+			// gramConsulta.g:22:9: 'nombre'
 			{
 			match("nombre"); 
 
@@ -389,8 +389,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__23;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:23:7: ( 'nombreLibro' )
-			// .\\gramConsulta.g:23:9: 'nombreLibro'
+			// gramConsulta.g:23:7: ( 'nombreLibro' )
+			// gramConsulta.g:23:9: 'nombreLibro'
 			{
 			match("nombreLibro"); 
 
@@ -410,8 +410,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__24;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:24:7: ( 'numeroPaginas' )
-			// .\\gramConsulta.g:24:9: 'numeroPaginas'
+			// gramConsulta.g:24:7: ( 'numeroPaginas' )
+			// gramConsulta.g:24:9: 'numeroPaginas'
 			{
 			match("numeroPaginas"); 
 
@@ -431,8 +431,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__25;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:25:7: ( 'numeroPedido' )
-			// .\\gramConsulta.g:25:9: 'numeroPedido'
+			// gramConsulta.g:25:7: ( 'numeroPedido' )
+			// gramConsulta.g:25:9: 'numeroPedido'
 			{
 			match("numeroPedido"); 
 
@@ -452,8 +452,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__26;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:26:7: ( 'paisAutor' )
-			// .\\gramConsulta.g:26:9: 'paisAutor'
+			// gramConsulta.g:26:7: ( 'paisAutor' )
+			// gramConsulta.g:26:9: 'paisAutor'
 			{
 			match("paisAutor"); 
 
@@ -473,8 +473,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = T__27;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:27:7: ( 'precioLibro' )
-			// .\\gramConsulta.g:27:9: 'precioLibro'
+			// gramConsulta.g:27:7: ( 'precioLibro' )
+			// gramConsulta.g:27:9: 'precioLibro'
 			{
 			match("precioLibro"); 
 
@@ -494,8 +494,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = ID;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:110:3: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )* )
-			// .\\gramConsulta.g:110:5: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
+			// gramConsulta.g:110:3: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )* )
+			// gramConsulta.g:110:5: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -505,7 +505,7 @@ public class gramConsultaLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// .\\gramConsulta.g:110:29: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
+			// gramConsulta.g:110:29: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
 			loop1:
 			while (true) {
 				int alt1=2;
@@ -516,7 +516,7 @@ public class gramConsultaLexer extends Lexer {
 
 				switch (alt1) {
 				case 1 :
-					// .\\gramConsulta.g:
+					// gramConsulta.g:
 					{
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 						input.consume();
@@ -550,11 +550,11 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = LITERAL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:117:8: ( '\\'' (~ '\\'' )* '\\'' )
-			// .\\gramConsulta.g:117:10: '\\'' (~ '\\'' )* '\\''
+			// gramConsulta.g:117:8: ( '\\'' (~ '\\'' )* '\\'' )
+			// gramConsulta.g:117:10: '\\'' (~ '\\'' )* '\\''
 			{
 			match('\''); 
-			// .\\gramConsulta.g:117:15: (~ '\\'' )*
+			// gramConsulta.g:117:15: (~ '\\'' )*
 			loop2:
 			while (true) {
 				int alt2=2;
@@ -565,7 +565,7 @@ public class gramConsultaLexer extends Lexer {
 
 				switch (alt2) {
 				case 1 :
-					// .\\gramConsulta.g:
+					// gramConsulta.g:
 					{
 					if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '&')||(input.LA(1) >= '(' && input.LA(1) <= '\uFFFF') ) {
 						input.consume();
@@ -600,8 +600,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:120:3: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
-			// .\\gramConsulta.g:120:5: ( ' ' | '\\t' | '\\r' | '\\n' )
+			// gramConsulta.g:120:3: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
+			// gramConsulta.g:120:5: ( ' ' | '\\t' | '\\r' | '\\n' )
 			{
 			if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
 				input.consume();
@@ -625,173 +625,173 @@ public class gramConsultaLexer extends Lexer {
 
 	@Override
 	public void mTokens() throws RecognitionException {
-		// .\\gramConsulta.g:1:8: ( T__7 | T__8 | T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | ID | LITERAL | WS )
+		// gramConsulta.g:1:8: ( T__7 | T__8 | T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | ID | LITERAL | WS )
 		int alt3=24;
 		alt3 = dfa3.predict(input);
 		switch (alt3) {
 			case 1 :
-				// .\\gramConsulta.g:1:10: T__7
+				// gramConsulta.g:1:10: T__7
 				{
 				mT__7(); 
 
 				}
 				break;
 			case 2 :
-				// .\\gramConsulta.g:1:15: T__8
+				// gramConsulta.g:1:15: T__8
 				{
 				mT__8(); 
 
 				}
 				break;
 			case 3 :
-				// .\\gramConsulta.g:1:20: T__9
+				// gramConsulta.g:1:20: T__9
 				{
 				mT__9(); 
 
 				}
 				break;
 			case 4 :
-				// .\\gramConsulta.g:1:25: T__10
+				// gramConsulta.g:1:25: T__10
 				{
 				mT__10(); 
 
 				}
 				break;
 			case 5 :
-				// .\\gramConsulta.g:1:31: T__11
+				// gramConsulta.g:1:31: T__11
 				{
 				mT__11(); 
 
 				}
 				break;
 			case 6 :
-				// .\\gramConsulta.g:1:37: T__12
+				// gramConsulta.g:1:37: T__12
 				{
 				mT__12(); 
 
 				}
 				break;
 			case 7 :
-				// .\\gramConsulta.g:1:43: T__13
+				// gramConsulta.g:1:43: T__13
 				{
 				mT__13(); 
 
 				}
 				break;
 			case 8 :
-				// .\\gramConsulta.g:1:49: T__14
+				// gramConsulta.g:1:49: T__14
 				{
 				mT__14(); 
 
 				}
 				break;
 			case 9 :
-				// .\\gramConsulta.g:1:55: T__15
+				// gramConsulta.g:1:55: T__15
 				{
 				mT__15(); 
 
 				}
 				break;
 			case 10 :
-				// .\\gramConsulta.g:1:61: T__16
+				// gramConsulta.g:1:61: T__16
 				{
 				mT__16(); 
 
 				}
 				break;
 			case 11 :
-				// .\\gramConsulta.g:1:67: T__17
+				// gramConsulta.g:1:67: T__17
 				{
 				mT__17(); 
 
 				}
 				break;
 			case 12 :
-				// .\\gramConsulta.g:1:73: T__18
+				// gramConsulta.g:1:73: T__18
 				{
 				mT__18(); 
 
 				}
 				break;
 			case 13 :
-				// .\\gramConsulta.g:1:79: T__19
+				// gramConsulta.g:1:79: T__19
 				{
 				mT__19(); 
 
 				}
 				break;
 			case 14 :
-				// .\\gramConsulta.g:1:85: T__20
+				// gramConsulta.g:1:85: T__20
 				{
 				mT__20(); 
 
 				}
 				break;
 			case 15 :
-				// .\\gramConsulta.g:1:91: T__21
+				// gramConsulta.g:1:91: T__21
 				{
 				mT__21(); 
 
 				}
 				break;
 			case 16 :
-				// .\\gramConsulta.g:1:97: T__22
+				// gramConsulta.g:1:97: T__22
 				{
 				mT__22(); 
 
 				}
 				break;
 			case 17 :
-				// .\\gramConsulta.g:1:103: T__23
+				// gramConsulta.g:1:103: T__23
 				{
 				mT__23(); 
 
 				}
 				break;
 			case 18 :
-				// .\\gramConsulta.g:1:109: T__24
+				// gramConsulta.g:1:109: T__24
 				{
 				mT__24(); 
 
 				}
 				break;
 			case 19 :
-				// .\\gramConsulta.g:1:115: T__25
+				// gramConsulta.g:1:115: T__25
 				{
 				mT__25(); 
 
 				}
 				break;
 			case 20 :
-				// .\\gramConsulta.g:1:121: T__26
+				// gramConsulta.g:1:121: T__26
 				{
 				mT__26(); 
 
 				}
 				break;
 			case 21 :
-				// .\\gramConsulta.g:1:127: T__27
+				// gramConsulta.g:1:127: T__27
 				{
 				mT__27(); 
 
 				}
 				break;
 			case 22 :
-				// .\\gramConsulta.g:1:133: ID
+				// gramConsulta.g:1:133: ID
 				{
 				mID(); 
 
 				}
 				break;
 			case 23 :
-				// .\\gramConsulta.g:1:136: LITERAL
+				// gramConsulta.g:1:136: LITERAL
 				{
 				mLITERAL(); 
 
 				}
 				break;
 			case 24 :
-				// .\\gramConsulta.g:1:144: WS
+				// gramConsulta.g:1:144: WS
 				{
 				mWS(); 
 

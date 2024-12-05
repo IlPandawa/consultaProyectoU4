@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 .\\gramConsulta.g 2024-12-04 10:59:14
+// $ANTLR 3.5.2 gramConsulta.g 2024-12-04 18:12:26
 
     import java.util.HashMap;
     import java.util.ArrayList;
@@ -60,7 +60,7 @@ public class gramConsultaParser extends Parser {
 	}
 
 	@Override public String[] getTokenNames() { return gramConsultaParser.tokenNames; }
-	@Override public String getGrammarFileName() { return ".\\gramConsulta.g"; }
+	@Override public String getGrammarFileName() { return "gramConsulta.g"; }
 
 
 	    HashMap<String, String> variables = new HashMap<String, String>();
@@ -111,13 +111,13 @@ public class gramConsultaParser extends Parser {
 
 
 	// $ANTLR start "inicio"
-	// .\\gramConsulta.g:60:1: inicio : ( tripleta )+ EOF ;
+	// gramConsulta.g:60:1: inicio : ( tripleta )+ EOF ;
 	public final void inicio() throws RecognitionException {
 		try {
-			// .\\gramConsulta.g:60:7: ( ( tripleta )+ EOF )
-			// .\\gramConsulta.g:60:9: ( tripleta )+ EOF
+			// gramConsulta.g:60:7: ( ( tripleta )+ EOF )
+			// gramConsulta.g:60:9: ( tripleta )+ EOF
 			{
-			// .\\gramConsulta.g:60:9: ( tripleta )+
+			// gramConsulta.g:60:9: ( tripleta )+
 			int cnt1=0;
 			loop1:
 			while (true) {
@@ -129,7 +129,7 @@ public class gramConsultaParser extends Parser {
 
 				switch (alt1) {
 				case 1 :
-					// .\\gramConsulta.g:60:10: tripleta
+					// gramConsulta.g:60:10: tripleta
 					{
 					pushFollow(FOLLOW_tripleta_in_inicio36);
 					tripleta();
@@ -166,7 +166,7 @@ public class gramConsultaParser extends Parser {
 
 
 	// $ANTLR start "tripleta"
-	// .\\gramConsulta.g:65:1: tripleta : var1= ID pred= predicado (var2= ID |lit= LITERAL ) ;
+	// gramConsulta.g:65:1: tripleta : var1= ID pred= predicado (var2= ID |lit= LITERAL ) ;
 	public final void tripleta() throws RecognitionException {
 		Token var1=null;
 		Token var2=null;
@@ -174,15 +174,15 @@ public class gramConsultaParser extends Parser {
 		ParserRuleReturnScope pred =null;
 
 		try {
-			// .\\gramConsulta.g:65:9: (var1= ID pred= predicado (var2= ID |lit= LITERAL ) )
-			// .\\gramConsulta.g:66:2: var1= ID pred= predicado (var2= ID |lit= LITERAL )
+			// gramConsulta.g:65:9: (var1= ID pred= predicado (var2= ID |lit= LITERAL ) )
+			// gramConsulta.g:66:2: var1= ID pred= predicado (var2= ID |lit= LITERAL )
 			{
 			var1=(Token)match(input,ID,FOLLOW_ID_in_tripleta55); 
 			pushFollow(FOLLOW_predicado_in_tripleta61);
 			pred=predicado();
 			state._fsp--;
 
-			// .\\gramConsulta.g:66:29: (var2= ID |lit= LITERAL )
+			// gramConsulta.g:66:29: (var2= ID |lit= LITERAL )
 			int alt2=2;
 			int LA2_0 = input.LA(1);
 			if ( (LA2_0==ID) ) {
@@ -200,13 +200,13 @@ public class gramConsultaParser extends Parser {
 
 			switch (alt2) {
 				case 1 :
-					// .\\gramConsulta.g:66:30: var2= ID
+					// gramConsulta.g:66:30: var2= ID
 					{
 					var2=(Token)match(input,ID,FOLLOW_ID_in_tripleta68); 
 					}
 					break;
 				case 2 :
-					// .\\gramConsulta.g:66:42: lit= LITERAL
+					// gramConsulta.g:66:42: lit= LITERAL
 					{
 					lit=(Token)match(input,LITERAL,FOLLOW_LITERAL_in_tripleta76); 
 					}
@@ -251,14 +251,14 @@ public class gramConsultaParser extends Parser {
 
 
 	// $ANTLR start "predicado"
-	// .\\gramConsulta.g:86:1: predicado : ( 'nombreLibro' | 'editorial' | 'autor' | 'genero' | 'paisAutor' | 'numeroPaginas' | 'anioEdicion' | 'precioLibro' | 'codigoLibro' | 'nombre' | 'apellidos' | 'noIdentificacion' | 'domicilio' | 'estado' | 'municipio' | 'fechaNacimiento' | 'codigoUsuario' | 'numeroPedido' | 'fechaSalida' | 'fechaMaxima' | 'fechaDevolucion' );
+	// gramConsulta.g:86:1: predicado : ( 'nombreLibro' | 'editorial' | 'autor' | 'genero' | 'paisAutor' | 'numeroPaginas' | 'anioEdicion' | 'precioLibro' | 'codigoLibro' | 'nombre' | 'apellidos' | 'noIdentificacion' | 'domicilio' | 'estado' | 'municipio' | 'fechaNacimiento' | 'codigoUsuario' | 'numeroPedido' | 'fechaSalida' | 'fechaMaxima' | 'fechaDevolucion' );
 	public final gramConsultaParser.predicado_return predicado() throws RecognitionException {
 		gramConsultaParser.predicado_return retval = new gramConsultaParser.predicado_return();
 		retval.start = input.LT(1);
 
 		try {
-			// .\\gramConsulta.g:86:10: ( 'nombreLibro' | 'editorial' | 'autor' | 'genero' | 'paisAutor' | 'numeroPaginas' | 'anioEdicion' | 'precioLibro' | 'codigoLibro' | 'nombre' | 'apellidos' | 'noIdentificacion' | 'domicilio' | 'estado' | 'municipio' | 'fechaNacimiento' | 'codigoUsuario' | 'numeroPedido' | 'fechaSalida' | 'fechaMaxima' | 'fechaDevolucion' )
-			// .\\gramConsulta.g:
+			// gramConsulta.g:86:10: ( 'nombreLibro' | 'editorial' | 'autor' | 'genero' | 'paisAutor' | 'numeroPaginas' | 'anioEdicion' | 'precioLibro' | 'codigoLibro' | 'nombre' | 'apellidos' | 'noIdentificacion' | 'domicilio' | 'estado' | 'municipio' | 'fechaNacimiento' | 'codigoUsuario' | 'numeroPedido' | 'fechaSalida' | 'fechaMaxima' | 'fechaDevolucion' )
+			// gramConsulta.g:
 			{
 			if ( (input.LA(1) >= 7 && input.LA(1) <= 27) ) {
 				input.consume();

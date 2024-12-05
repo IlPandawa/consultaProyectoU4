@@ -81,8 +81,6 @@ public class Menu extends javax.swing.JFrame {
         tAreaCasoPrueba = new javax.swing.JTextArea();
         jButton4 = new javax.swing.JButton();
         btnTheme = new javax.swing.JButton();
-        radiogramBinding = new javax.swing.JRadioButton();
-        radioAOptimizador = new javax.swing.JRadioButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         btnAbrirArchivo = new javax.swing.JMenuItem();
@@ -100,6 +98,11 @@ public class Menu extends javax.swing.JFrame {
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -123,13 +126,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        buttonGroup1.add(radiogramBinding);
-        radiogramBinding.setSelected(true);
-        radiogramBinding.setText("gramBinding");
-
-        buttonGroup1.add(radioAOptimizador);
-        radioAOptimizador.setText("AOptimizador");
-
         jMenu2.setText("Archivo");
 
         btnAbrirArchivo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
@@ -152,23 +148,20 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(btnTheme)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 195, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(287, 287, 287))
             .addGroup(layout.createSequentialGroup()
-                .addGap(224, 224, 224)
-                .addComponent(jButton2)
-                .addGap(231, 231, 231)
-                .addComponent(jButton4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(111, 111, 111)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(radioAOptimizador)
-                    .addComponent(radiogramBinding))
-                .addGap(18, 18, 18))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(224, 224, 224)
+                        .addComponent(jButton2)
+                        .addGap(231, 231, 231)
+                        .addComponent(jButton4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,17 +174,11 @@ public class Menu extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addComponent(btnTheme)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(radiogramBinding)
-                        .addGap(4, 4, 4)
-                        .addComponent(radioAOptimizador))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton4))))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton4))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
 
@@ -255,32 +242,6 @@ public class Menu extends javax.swing.JFrame {
             //Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        if (radiogramBinding.isSelected()) {
-            System.out.println("Sintactico");
-            gramBindingLexer lexer = new gramBindingLexer(input);
-            CommonTokenStream tokens = new CommonTokenStream(lexer);
-            gramBindingParser parser = new gramBindingParser(tokens);
-            parser.setSalida(textArea);
-
-            try {
-                parser.start();
-            } catch (RecognitionException ex) {
-                Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } else {
-            System.out.println("Biblioteca");
-            AOptimizadorLexer lexer = new AOptimizadorLexer(input);
-            CommonTokenStream tokens = new CommonTokenStream(lexer);
-            AOptimizadorParser parser = new AOptimizadorParser(tokens);
-            parser.setSalida(textArea);
-
-            try {
-                parser.start();
-            } catch (RecognitionException ex) {
-                Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-
         Notifications.getInstance().setJFrame(this);
 
         Notifications.getInstance().show(Notifications.Type.INFO, Notifications.Location.TOP_CENTER, 3000, "Compilado.");
@@ -337,6 +298,15 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnThemeActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+    
+    
+    
+    
+    
+    
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -357,8 +327,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JRadioButton radioAOptimizador;
-    private javax.swing.JRadioButton radiogramBinding;
     private javax.swing.JTextArea tAreaCasoPrueba;
     // End of variables declaration//GEN-END:variables
 }

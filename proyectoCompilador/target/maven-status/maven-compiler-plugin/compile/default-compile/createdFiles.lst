@@ -15,6 +15,7 @@ com\mycompany\proyectocompilador\ProyectoCompilador.class
 com\mycompany\proyectocompilador\Menu$6.class
 com\mycompany\proyectocompilador\antlrG00\gramBindingLexer$DFA4.class
 com\mycompany\proyectocompilador\antlrG00\aSintactico_V4Parser$type_return.class
+classG00\ConsultaBiblioteca.class
 com\mycompany\proyectocompilador\antlrG00\bibliotecaLexer.class
 com\mycompany\proyectocompilador\Menu$3.class
 jnafilechooser\api\WindowsFolderBrowser.class
@@ -39,5 +40,6 @@ com\mycompany\proyectocompilador\antlrG00\aSintactico_V4Lexer$DFA4.class
 com\mycompany\proyectocompilador\Menu$2.class
 jnafilechooser\win32\Ole32.class
 com\mycompany\proyectocompilador\antlrG00\bibliotecaParser.class
+com\mycompany\proyectocompilador\Menu$7.class
 com\mycompany\proyectocompilador\antlrG00\aSintactico_V4Parser$atom_return.class
 com\mycompany\proyectocompilador\antlrG00\gramBindingParser$multExpr_return.class
