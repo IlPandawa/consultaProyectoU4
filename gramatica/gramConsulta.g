@@ -88,7 +88,7 @@ tripleta:
 
 
 predicado:
-	'codigoLibro''nombreLibro'| 'editorial'| 'autor'| 'genero'| 'paisAutor'| 'numeroPaginas'| 'anioEdicion'| 'precioLibro' {/* LIBRO */}
+	'codigoLibro' | 'nombreLibro'| 'editorial'| 'autor'| 'genero'| 'paisAutor'| 'numeroPaginas'| 'anioEdicion'| 'precioLibro' {/* LIBRO */}
 	| 'nombre'| 'apellidos'| 'noIdentificacion'| 'domicilio'| 'estado'| 'municipio'| 'fechaNacimiento' {/* USUARIO */}
 	| 'codigoUsuario'| 'numeroPedido'| 'fechaSalida'| 'fechaMaxima'| 'fechaDevolucion' {/* PRESTAMO */};
 
