@@ -16,19 +16,25 @@ options {
     private String generateJavaCode() {
         StringBuilder code = new StringBuilder();
         
-        // Imports necesarios
-        code.append("import com.hp.hpl.jena.query.*;\n");
-        code.append("import com.hp.hpl.jena.rdf.model.*;\n");
-        code.append("import com.hp.hpl.jena.util.FileManager;\n\n");
+        // Imports
+        code.append("package classG00; \n\n");
+        code.append("import com.hp.hpl.jena.query.Query; \n");
+        code.append("import com.hp.hpl.jena.query.QueryExecution; \n");
+        code.append("import com.hp.hpl.jena.query.QueryExecutionFactory; \n");
+        code.append("import com.hp.hpl.jena.query.QueryFactory; \n");
+        code.append("import com.hp.hpl.jena.query.ResultSet; \n");
+        code.append("import com.hp.hpl.jena.query.ResultSetFormatter; \n");
+        code.append("import com.hp.hpl.jena.rdf.model.Model; \n");
+        code.append("import com.hp.hpl.jena.rdf.model.ModelFactory; \n");
+        code.append("import com.hp.hpl.jena.util.FileManager; \n");
         
-        // Clase principal
         code.append("public class ConsultaBiblioteca {\n");
         code.append("    private static final String MY_RDF_FILE = \"biblioteca.rdf\";\n\n");
         code.append("    public static void main(String[] args) {\n");
         code.append("        Model grafo = ModelFactory.createDefaultModel();\n");
         code.append("        FileManager.get().readModel(grafo, MY_RDF_FILE);\n\n");
         
-        // Construcción de la consulta SPARQL
+        // consulta tripletas
         code.append("        String queryString = \"base <http://www.proyecto.com/biblioteca#>\" +\n");
         code.append("            \"PREFIX biblioteca: <http://www.proyecto.com/biblioteca#> \" +\n");
         code.append("            \"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \" +\n");
@@ -36,14 +42,12 @@ options {
         code.append("            \"SELECT * \" +\n");
         code.append("            \"WHERE { \" +\n");
         
-        // Agregar tripletas
+        // agrega la consulta
         for(int i = 0; i < tripletas.size(); i++) {
             code.append("            \"" + tripletas.get(i) + " \" +\n");
         }
-        
         code.append("            \"} \";\n\n");
-        
-        // Ejecución de la consulta
+
         code.append("        Query consulta = QueryFactory.create(queryString);\n");
         code.append("        QueryExecution consultaEj = QueryExecutionFactory.create(consulta, grafo);\n");
         code.append("        ResultSet resultados = consultaEj.execSelect();\n");
@@ -52,16 +56,16 @@ options {
         code.append("    }\n");
         code.append("}\n");
         
+        //regresa el codigo java generado
         return code.toString();
     }
 }
 
-// Regla principal que maneja la consulta completa
 inicio: (tripleta)+ EOF {
             System.out.println(generateJavaCode());
         };
 
-// Define una tripleta de la consulta
+
 tripleta:
 	var1 = ID pred = predicado (var2 = ID | lit = LITERAL) {
             String sujeto = variables.containsKey($var1.text) ? 
@@ -82,39 +86,12 @@ tripleta:
             variables.put($var1.text, "?" + $var1.text);
         };
 
-// Predicados válidos para la biblioteca
+
 predicado:
-	'nombreLibro'
-	| 'editorial'
-	| 'autor'
-	| 'genero'
-	| 'paisAutor'
-	| 'numeroPaginas'
-	| 'anioEdicion'
-	| 'precioLibro'
-	| 'codigoLibro'
-	| 'nombre'
-	| 'apellidos'
-	| 'noIdentificacion'
-	| 'domicilio'
-	| 'estado'
-	| 'municipio'
-	| 'fechaNacimiento'
-	| 'codigoUsuario'
-	| 'numeroPedido'
-	| 'fechaSalida'
-	| 'fechaMaxima'
-	| 'fechaDevolucion';
+	'codigoLibro''nombreLibro'| 'editorial'| 'autor'| 'genero'| 'paisAutor'| 'numeroPaginas'| 'anioEdicion'| 'precioLibro' {/* LIBRO */}
+	| 'nombre'| 'apellidos'| 'noIdentificacion'| 'domicilio'| 'estado'| 'municipio'| 'fechaNacimiento' {/* USUARIO */}
+	| 'codigoUsuario'| 'numeroPedido'| 'fechaSalida'| 'fechaMaxima'| 'fechaDevolucion' {/* PRESTAMO */};
 
-// Identificadores para variables
-ID: ('a' ..'z' | 'A' ..'Z') (
-		'a' ..'z'
-		| 'A' ..'Z'
-		| '0' ..'9'
-	)*;
-
-// Literales (cadenas entre comillas simples)
+ID: ('a' ..'z' | 'A' ..'Z') ('a' ..'z'| 'A' ..'Z'| '0' ..'9')*;
 LITERAL: '\'' (~'\'')* '\'';
-
-// Ignorar espacios en blanco
 WS: ( ' ' | '\t' | '\r' | '\n') {$channel=HIDDEN;};

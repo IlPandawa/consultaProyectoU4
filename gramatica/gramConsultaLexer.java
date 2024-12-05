@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 .\\gramConsulta.g 2024-12-04 10:59:14
+// $ANTLR 3.5.2 .\\gramConsulta.g 2024-12-04 19:06:18
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -494,8 +494,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = ID;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:110:3: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )* )
-			// .\\gramConsulta.g:110:5: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
+			// .\\gramConsulta.g:95:3: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )* )
+			// .\\gramConsulta.g:95:5: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -505,7 +505,7 @@ public class gramConsultaLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// .\\gramConsulta.g:110:29: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
+			// .\\gramConsulta.g:95:29: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*
 			loop1:
 			while (true) {
 				int alt1=2;
@@ -550,11 +550,11 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = LITERAL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:117:8: ( '\\'' (~ '\\'' )* '\\'' )
-			// .\\gramConsulta.g:117:10: '\\'' (~ '\\'' )* '\\''
+			// .\\gramConsulta.g:96:8: ( '\\'' (~ '\\'' )* '\\'' )
+			// .\\gramConsulta.g:96:10: '\\'' (~ '\\'' )* '\\''
 			{
 			match('\''); 
-			// .\\gramConsulta.g:117:15: (~ '\\'' )*
+			// .\\gramConsulta.g:96:15: (~ '\\'' )*
 			loop2:
 			while (true) {
 				int alt2=2;
@@ -600,8 +600,8 @@ public class gramConsultaLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// .\\gramConsulta.g:120:3: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
-			// .\\gramConsulta.g:120:5: ( ' ' | '\\t' | '\\r' | '\\n' )
+			// .\\gramConsulta.g:97:3: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
+			// .\\gramConsulta.g:97:5: ( ' ' | '\\t' | '\\r' | '\\n' )
 			{
 			if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
 				input.consume();
