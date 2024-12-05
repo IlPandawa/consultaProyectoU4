@@ -1,0 +1,41 @@
+//CASO DE PRUEBAS SIN ERRORES
+
+public class Empleado{
+	private int x,y;  
+            double f,g;
+ 
+	protected int metodo1(int x1, double d1){
+      int  xx;
+      double ff;
+      xx = y*((123*x1)+x);
+      ff = (g+3.4)*d1;   
+	}
+	private double metodo2(int x1, double d1){
+      int  xx;
+      double ff;
+      xx = y*((123*x1)+x);
+      ff = (g+3.4)*d1;   
+	}
+    public double z,w;  
+}
+
+//CASO DE PRUEBA CON ERRORES
+
+public class Empleado{
+	private int x,y;  
+            double f,g;
+	protected int metodo1(int x1, double d1){
+      int  xx;
+      double ff;
+      xx = y*((123*x1)+x);
+      ff = (g+3.4)*d1;  
+      int f,g,ff; 
+	}
+	private double metodo2(int x1, double d1){
+      int  xx;
+      double ff,d1;
+      xx = y*((123.3*x1)+x);
+      ff = (g+3)*d1;   
+	}
+    public double Empleado,metodo2,g;  
+}
