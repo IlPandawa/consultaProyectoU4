@@ -16,6 +16,8 @@ import com.mycompany.proyectocompilador.antlrG00.bibliotecaLexer;
 import com.mycompany.proyectocompilador.antlrG00.bibliotecaParser;
 import com.mycompany.proyectocompilador.antlrG00.gramBindingLexer;
 import com.mycompany.proyectocompilador.antlrG00.gramBindingParser;
+import com.mycompany.proyectocompilador.antlrG00.gramConsultaLexer;
+import com.mycompany.proyectocompilador.antlrG00.gramConsultaParser;
 import com.mycompany.proyectocompilador.antlrG00.gramRDFLexer;
 import com.mycompany.proyectocompilador.antlrG00.gramRDFParser;
 import java.awt.Image;
@@ -35,8 +37,11 @@ import java.awt.event.ActionListener;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringBufferInputStream;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
@@ -48,6 +53,8 @@ import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import javax.tools.JavaCompiler;
+import javax.tools.ToolProvider;
 import raven.toast.Notifications;
 import raven.glasspanepopup.*;
 import jnafilechooser.api.JnaFileChooser;
@@ -100,11 +107,6 @@ public class Menu extends javax.swing.JFrame {
                 jButton2MouseClicked(evt);
             }
         });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
 
         tAreaCasoPrueba.setColumns(20);
         tAreaCasoPrueba.setRows(5);
@@ -148,20 +150,19 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(btnTheme)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 195, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(287, 287, 287))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(224, 224, 224)
-                        .addComponent(jButton2)
-                        .addGap(231, 231, 231)
-                        .addComponent(jButton4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(224, 224, 224)
+                .addComponent(jButton2)
+                .addGap(231, 231, 231)
+                .addComponent(jButton4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(111, 111, 111)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 155, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,20 +211,19 @@ public class Menu extends javax.swing.JFrame {
         panel.add(titulo, BorderLayout.NORTH); // Título arriba (NORTH)
         panel.add(scrollPane, BorderLayout.CENTER); // Área de texto con scroll en el centro
 
-        JButton copiarButton = new JButton("Copiar");
+        JButton copiarButton = new JButton("Generar");
         copiarButton.setFont(new Font("Arial", Font.BOLD, 16));
         copiarButton.setPreferredSize(new Dimension(100, 30));
         copiarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Copiar el texto del JTextArea al portapapeles
-                String contenido = textArea.getText();
-                if (!contenido.isEmpty()) {
-                    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(contenido), null);
-                    Notifications.getInstance().show(Notifications.Type.SUCCESS, Notifications.Location.BOTTOM_RIGHT, 1000, "Texto Copiado en el portapapeles.");
-                } else {
-                    Notifications.getInstance().show(Notifications.Type.SUCCESS, Notifications.Location.BOTTOM_RIGHT, 1000, "Texto Copiado en el portapapeles.");
-
+                
+               
+                try {
+                    createAndCompileClass("classG00", "ConsultaBiblioteca", textArea.getText());
+                } catch (Exception ex) {
+                    Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
@@ -241,6 +241,20 @@ public class Menu extends javax.swing.JFrame {
         } catch (IOException ex) {
             //Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        
+            
+            gramConsultaLexer lexer = new gramConsultaLexer(input);
+            CommonTokenStream tokens = new CommonTokenStream(lexer);
+            gramConsultaParser parser = new gramConsultaParser(tokens);
+            parser.setSalida(textArea);
+
+            try {
+                parser.inicio();
+            } catch (RecognitionException ex) {
+                Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
 
         Notifications.getInstance().setJFrame(this);
 
@@ -297,14 +311,58 @@ public class Menu extends javax.swing.JFrame {
             });
         }
     }//GEN-LAST:event_btnThemeActionPerformed
+    
+    
+    
+    public static void createAndCompileClass(String packageName, String className, String code) throws Exception {
+        // Directorio base para la salida del archivo
+        File baseDir = new File(System.getProperty("user.dir") + "/src/main/java/");
+        File packageDir = new File(baseDir, packageName.replace(".", "/"));
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-    
-    
-    
-    
+        // Crear el directorio del paquete si no existe
+        if (!packageDir.exists() && !packageDir.mkdirs()) {
+            throw new IOException("No se pudo crear el directorio para el paquete.");
+        }
+
+        // Ruta completa del archivo fuente
+        File sourceFile = new File(packageDir, className + ".java");
+
+        // Escribir el archivo fuente
+        try (FileWriter writer = new FileWriter(sourceFile)) {
+            writer.write(code);
+        }
+
+        // Compilar el archivo fuente
+        JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+        int result = compiler.run(null, null, null, sourceFile.getPath());
+
+        if (result == 0) {
+            System.out.println("Clase compilada correctamente.");
+            Notifications.getInstance().show(Notifications.Type.SUCCESS, Notifications.Location.TOP_CENTER, 3000, "Clase generada correctamente.");
+        } else {
+            System.out.println("Error al compilar la clase.");
+            return;
+        }
+
+        // Cargar la clase compilada dinámicamente usando un ClassLoader
+        File compiledDir = baseDir;
+        URLClassLoader classLoader = URLClassLoader.newInstance(new URL[] { compiledDir.toURI().toURL() });
+
+        // Nombre completo de la clase con el paquete
+        String fullClassName = packageName + "." + className;
+        Class<?> generatedClass = Class.forName(fullClassName, true, classLoader);
+
+        // Ejecutar el método `main` si existe
+        try {
+            generatedClass.getMethod("main", String[].class).invoke(null, (Object) new String[] {});
+        } catch (NoSuchMethodException e) {
+            System.out.println("La clase generada no tiene un método main.");
+        }
+
+        // Eliminar el archivo fuente después de su uso (opcional)
+        
+        new File(packageDir, className + ".class").delete(); // Eliminar también el archivo compilado
+    }
     
     
     public static void main(String args[]) {

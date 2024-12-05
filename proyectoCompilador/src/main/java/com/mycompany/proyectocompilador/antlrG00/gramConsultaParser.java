@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 gramConsulta.g 2024-12-04 19:11:35
+package com.mycompany.proyectocompilador.antlrG00;// $ANTLR 3.5.2 gramConsulta.g 2024-12-04 19:11:35
 
     import java.util.HashMap;
     import java.util.ArrayList;
@@ -11,6 +11,25 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class gramConsultaParser extends Parser {
+    private javax.swing.JTextArea salida;
+
+    public void setSalida(javax.swing.JTextArea _salida) {
+        salida = _salida;
+    }
+    public int i;
+
+    public boolean isSalidaVacio() {
+        if (salida != null) {
+            String texto = salida.getText().trim();
+            System.out.println("Texto actual del JTextArea: '" + texto + "'"); // Imprimir el texto para depurar
+            return texto.isEmpty();
+        }
+        return true; // Si el JTextArea es null, se considera vacío
+    }
+
+    public javax.swing.JTextArea getSalida() {
+        return salida;
+    }
 	public static final String[] tokenNames = new String[] {
 		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ID", "LITERAL", "WS", "'anioEdicion'", 
 		"'apellidos'", "'autor'", "'codigoLibro'", "'codigoUsuario'", "'domicilio'", 
@@ -110,6 +129,8 @@ public class gramConsultaParser extends Parser {
 	        code.append("}\n");
 	        
 	        //regresa el codigo java generado
+                
+                salida.append(code.toString());
 	        return code.toString();
 	    }
 

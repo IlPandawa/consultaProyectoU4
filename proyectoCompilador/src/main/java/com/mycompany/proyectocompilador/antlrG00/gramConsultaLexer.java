@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 gramConsulta.g 2024-12-04 19:11:35
+package com.mycompany.proyectocompilador.antlrG00;// $ANTLR 3.5.2 gramConsulta.g 2024-12-04 19:11:35
 
 import org.antlr.runtime.*;
 import java.util.Stack;
